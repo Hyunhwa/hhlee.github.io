@@ -16,9 +16,7 @@
 title: 기억력 대신 메모력
 #email: lonerjoker@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  부실한 기억력을 믿지 않기로 하였습니다. 부족한 기억력을 뒷받침해줄 메모력을 가지려 합니다. 쓰다보면 문장력 또한 늘어날거라 믿습니다.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
