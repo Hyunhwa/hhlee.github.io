@@ -13,10 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: 기억력 대신 메모력
+title: 개발노트
 #email: lonerjoker@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  부족한 기억력을 대신하여 메모력을 기르기로 했습니다. 부족한 문장력도 쓰다보면 늘겠죠.
+#description: >- # this means to ignore newlines until "baseurl:"
+#  부족한 기억력을 대신하여 메모력을 기르기로 했습니다. 부족한 문장력도 쓰다보면 늘겠죠.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
@@ -24,7 +24,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-minimal
+theme: minima
 plugins:
   - jekyll-feed
 
