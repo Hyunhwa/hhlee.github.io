@@ -77,7 +77,8 @@ Apache 웹서버의 루트 디렉토리가 될 폴더를 생성한다. ( **/User
 
 ### 참고자료
 - [Testlink 설치 메뉴얼 v1.9]({{ site.url }}/_resource/testlink_installation_manual.odt) [영문]
-- [http://bungylovemickey.thpiano.com/?p=92](http://bungylovemickey.thpiano.com/?p=92) [중문]
+- [Testlink 한글 가이드 문서(Windows)](https://www.swbank.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000000005882&fileSn=0&AU=Y) [국문]
+- [MAC OS上安装testlink](http://bungylovemickey.thpiano.com/?p=92) [중문]
 
 [MySql]:https://www.mysql.com/downloads/
 [Testlink]:http://testlink.org/
