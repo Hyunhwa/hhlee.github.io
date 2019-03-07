@@ -20,7 +20,7 @@ author:
 #  reddit:           your-id
 #  medium:           your-id
 #  tumblr:           your-id
-  email:            hhlee@3ibank.com
+  email:            lonerjoker@gmail.com
 
 copyright:
   year:             2019
@@ -37,8 +37,8 @@ remote_theme: aweekj/kiko-now
 #  id:               "kiko-plus"
 
 # URL
-url:                "https://hyunhwa.github.io/" # the base hostname & protocol for your site
-#url:                "http://localhost:4000" # use this url when you develop
+#url:                "https://hyunhwa.github.io/" # the base hostname & protocol for your site
+url:                "http://localhost:4000" # use this url when you develop
 baseurl:            "" # the subpath of your site, e.g. /blog
 
 

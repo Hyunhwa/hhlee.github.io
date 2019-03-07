@@ -11,9 +11,9 @@ categories: Testlink
 
 Mac 환경에서 Testlink 를 설치하기 위한 방법은 세 가지가 있다.
 1. 소스 다운로드 후 Mac에 서버 환경 구축
-2. 소스 다운로드 후 XAMPP(php 개발도구)을 통해 Mac에 개발 환경 구축 <br/>
--> 도구 사용을 위해 개발환경을 구축할 필요는 없다.
-3. Bitnami 사이트에서 [Installer] 다운로드 후 VM(가상머신)에 서버 환경 구축<br/>
+2. 소스 다운로드 후 Mac에 개발 환경 구축 (XAMPP 필요)<br/>
+-> 도구 사용을 위해 개발 환경을 구축할 필요는 없다.
+3. [Installer] 다운로드 후 VM(가상머신)에 서버 환경 구축<br/>
 -> VM에 설치한 경우 다른 PC에서의 접근성이 문제가 된다.
 
 따라서 1번 방법을 통해 설치하였다.
@@ -21,29 +21,28 @@ Mac 환경에서 Testlink 를 설치하기 위한 방법은 세 가지가 있다
 설치를 위해 다음과 같은 서버 환경이 필요하다. (기본적으로 Mac에는 Apache, php 가 내장되어있다.) 
 
 |---|---|
-| **OS** | 대부분의 OS 지원 (Linux, Windows, Mac) |
+| **OS** | Linux, Windows, Mac  |
 | **DB** | MySQL 4.1.x 이상 (권장사양 5.x) <br/> Postgres 8.x 이상 <br/> μsoft SQL 2000, 2005 (1.9 버전에선 미지원) |
 | **WAS** | Apache 1.3.x 또는 2.x 이상 <br/> IIS 3 이상 |
-| **PHP** | 5.2 이상 (1.9 공식문서에는 6.0을 지원하지 않는다고 하였으나, php7 버전에서도 구동됨) |
-
+| **PHP** | 5.2 이상 (1.9 공식문서에는 6.0을 지원하지 않는다고 하였으나, 7.x 버전에서도 구동됨) |
 
 ### Apache 설정
-브라우저 주소창에 `http://localhost`를 입력하였을 때 다음과 같이 **It works!**가 나타나면 Apache가 정상 작동 중이다.
-![]({{ site.url }}/_resource/localhost.png)
+브라우저 주소창에 `http://localhost`를 입력하였을 때 다음과 같이 **It works!**가 나타나면 Apache가 정상 작동 중이다.[^1]
+![]({{ site.url }}/_resource/testlink/localhost.png)
 
 Apache 는 **/etc/apache2** 경로에 설치되어있다. (**Finder** Command + Shift + G)
-![]({{ site.url }}/_resource/apache2_location.png)
+![]({{ site.url }}/_resource/testlink/apache2_location.png)
 
-`httpd.conf` 파일을 열어 **LoadModule php** 를 찾아 주석을 풀어준다.(**#** 삭제)
-![]({{ site.url }}/_resource/httpd_conf_php.png)
+**httpd.conf** 파일을 열어 **'LoadModule php'** 를 찾아 주석을 풀어준다. (**#** 삭제)
+![]({{ site.url }}/_resource/testlink/httpd_conf_php.png)
 
 터미널을 열어 Apache 를 재시작한다.
 ```bash
 sudo apachectl restart
 ```
 
-Apache 웹서버의 루트 디렉토리가 될 폴더를 생성한다. ( **/User/{username}** > **Sites** 폴더 생성)
-![]({{ site.url }}/_resource/insert_root_dir.png)
+Apache 웹서버의 루트 디렉토리가 될 폴더를 생성한다. ( **/User/{username}** 에 **Sites** 폴더 생성)
+![]({{ site.url }}/_resource/testlink/insert_root_dir.png)
 
  **/User/{username}/Sites** 에 **{username}.conf** 파일을 생성하고 다음과 같이 내용을 작성한다.
 ```php
@@ -54,31 +53,39 @@ Apache 웹서버의 루트 디렉토리가 될 폴더를 생성한다. ( **/User
 </Directory>
 ```
 
+**/etc/apache2/httpd.conf** 파일을 열어 변경된 루트 디렉토리를 적용한다.
+![]({{ site.url }}/_resource/testlink/httpd_conf_dir_root.png)
+
 ### MySql 설치
 [MySql] 공식 사이트에서 **MySQL Comunity Edition** 을 설치한다. (자세한 설명은 다음 기회에..)
-
 
 ### Testlink 설치
 [Github] 에서 Testlink 소스를 다운로드 받는다. <br/>
 (2019.03.06 기준 sourceforge 사이트에 접근이 되지 않음)
 
-<br/><br/>
-버그 트래킹과 연동할 경우 각 시스템 별 최소 사양은 다음과 같다.
-- Bugzilla 0.19.1
-- Mantis 1.0.1 
-- JIRA 3.1.1
-- TrackPlus 3.3
-- Eventum 2.0
-- Trac 0.10 
-- Fogbugz 3.1.9 
-- Gforce (unknown version)
-- Redmine 0.6.3 
+**/User/{username}/Sites** 에 압축을 푼 뒤, 생성된 폴더명을 **testlink**로 변경한다.
+![]({{ site.url }}/_resource/testlink/change_name_testlink.png)
 
+**testlink** 내 **custom_config.inc.php.example** 파일을 복사하여 **custom_config.inc.php** 생성 뒤 다음과 같이 내용을 작성한다. 
+```php
+$tlCfg->log_path = '/Users/{username}/Sites/testlink/logs';
+$g_repositoryPath = '/Users/{username}/Sites/testlink/upload_area';
+```
+터미널을 열어 **testlink** 내 모든 파일의 접근 권한을 변경한다.
+```bash
+sudo chmod 777 Sites/testlink/*
+```
+브라우저에 `http://localhost/testlink` 입력하면 Testlink 설치를 위한 화면이 나타난다. [^2]
+![]({{ site.url }}/_resource/testlink/testlink_install_intro.png)
 
+<br/> 
 ### 참고자료
-- [Testlink 설치 메뉴얼 v1.9]({{ site.url }}/_resource/testlink_installation_manual.odt) [영문]
-- [Testlink 한글 가이드 문서(Windows)](https://www.swbank.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000000005882&fileSn=0&AU=Y) [국문]
+- [testlink_installation_manual.pdf]({{ site.url }}/_resource/testlink/testlink_installation_manual.pdf) [영문]
+- [Testlink.pdf](https://www.swbank.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000000005882&fileSn=0&AU=Y) [국문]
 - [MAC OS上安装testlink](http://bungylovemickey.thpiano.com/?p=92) [중문]
+
+[^1]: **It works!** 가 나타나지 않는 경우 터미널을 열어 Apache를 시작한다. ```sudo apachectl start```
+[^2]: 페이지 에러가 발생된 경우 터미널에서 Apache를 재실행 한다.
 
 [MySql]:https://www.mysql.com/downloads/
 [Testlink]:http://testlink.org/
