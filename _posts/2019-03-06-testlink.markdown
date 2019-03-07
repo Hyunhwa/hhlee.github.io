@@ -39,22 +39,21 @@ Apache 는 **/etc/apache2** 경로에 설치되어있다. (**Finder** Command + 
 ![]({{ site.url }}/_resource/httpd_conf_php.png)
 
 터미널을 열어 Apache 를 재시작한다.
-{% highlight bash %}
+```bash
 sudo apachectl restart
-{% endhighlight %}
+```
 
 Apache 웹서버의 루트 디렉토리가 될 폴더를 생성한다. ( **/User/{username}** > **Sites** 폴더 생성)
 ![]({{ site.url }}/_resource/insert_root_dir.png)
 
  **/User/{username}/Sites** 에 **{username}.conf** 파일을 생성하고 다음과 같이 내용을 작성한다.
-{% highlight php %}
+```php
 <Directory "/Users/{username}/Sites/">
     Options Indexes MultiViews FllowSymlinks
     AllowOverride All
     Require all granted
 </Directory>
-{% endhighlight %}
-
+```
 
 ### MySql 설치
 [MySql] 공식 사이트에서 **MySQL Comunity Edition** 을 설치한다. (자세한 설명은 다음 기회에..)
