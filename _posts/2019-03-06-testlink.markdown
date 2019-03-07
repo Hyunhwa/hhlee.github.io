@@ -2,7 +2,8 @@
 layout: post
 title: "Mac 에 Testlink 설치하기"
 date: 2019-03-06
-tags: [testlink]
+tags: [testlink, 테스트링크]
+comments: true
 categories: Testlink
 ---
 

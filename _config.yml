@@ -20,7 +20,7 @@ author:
 #  reddit:           your-id
 #  medium:           your-id
 #  tumblr:           your-id
-  email:            lonerjoker@gmail.com
+#  email:            
 
 copyright:
   year:             2019
@@ -33,8 +33,8 @@ remote_theme: aweekj/kiko-now
 #  id:               ""
 
 # Disqus
-#disqus:
-#  id:               "kiko-plus"
+disqus:
+  id:               "hyunhwa_lee"
 
 # URL
 url:                "https://hyunhwa.github.io/" # the base hostname & protocol for your site
