@@ -84,7 +84,7 @@ sudo chmod 777 Sites/testlink/*
 약관 동의 후 **continue** 선택 
 ![]({{ site.url }}/_resource/testlink/install_1_acceptance_of_license.png)
 
-web/php 설정을 확인한다. (Database 는 Mysql / MSSql 중 하나만 설치되어 있어도 된다.)
+web/php 설정을 확인한다. (Database 는 Mysql / MSSql 중 하나만 설치되어 있으면 된다.)
 ![]({{ site.url }}/_resource/testlink/install_2_1_verification_of_system_and_configuration_requirements.png)
 
 Testlink 내부 파일들의 접근 권한을 확인한다. (testlink 내 모든 파일 접근 권한이 허용되어있으면 OK)
@@ -99,10 +99,10 @@ DB 설정을 위한 정보를 입력한다. (기본적으로 testlink 라는 테
 
 root 권한 계정과 Testlink 에 접근할 DB 계정 정보를 입력 후, **Process TestLink Setup!** 을 선택 
 
-설치시 다음 권한을 필요로 합니다.
+설치시 다음 권한이 필요하다.
 - INDEX, CREATE, DELETE, DROP 
 
-운영 시 Testlink 에 접근할 계정은 다음 권한을 갖고 있어야 합니다.
+운영 시 Testlink 에 접근할 계정은 다음 권한을 갖고 있어야 한다.
 - ALTER, SELECT, INSERT, UPDATE 
 
 ![]({{ site.url }}/_resource/testlink/install_3_2_definition_of_db_access.png)
