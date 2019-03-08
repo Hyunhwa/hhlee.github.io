@@ -14,6 +14,7 @@ Testlink 는 웹 기반의 테스트 관리 도구이다. 테스트 명세와 �
 1. 프로젝트 생성
 2. 테스트 스위트 생성
 3. 테스트 케이스 작성
+ - 단계별 테스트 추가
 
 
 ### 1. 프로젝트 생성
@@ -23,7 +24,7 @@ Testlink 는 웹 기반의 테스트 관리 도구이다. 테스트 명세와 �
 
 ![]({{ site.url }}/_resource/testlink/no_project.png)
 
-'생성' 버튼을 클릭하면, 다음과 같이 프로젝트 리스트가 표시된다.
+**생성** 버튼을 클릭하면, 다음과 같이 프로젝트 리스트가 표시된다.[^1]
 
 ![]({{ site.url }}/_resource/testlink/project_list.png)
 
@@ -38,33 +39,33 @@ Testlink 는 웹 기반의 테스트 관리 도구이다. 테스트 명세와 �
 
 ![]({{ site.url }}/_resource/testlink/testlink_no_test_suit.png)
 
-**'+'** 아이콘을 선택하여 테스트 스위트를 작성한다.
+**+** 아이콘을 선택하여 테스트 스위트를 작성한다.
 
 ![]({{ site.url }}/_resource/testlink/create_testsuite.png)
 
-**저장** 버튼 클릭 시 다음과 같이 왼쪽 트리에 추가된 테스트 스위트를 확인할 수 있다.
+**저장** 버튼 클릭 시 다음과 같이 왼쪽 트리 영역에 추가된 테스트 스위트를 확인할 수 있다.
 
 ![]({{ site.url }}/_resource/testlink/confirm_testsuite_created.png)
 
 
 ### 3. 테스트 케이스 작성
 
-왼쪽 트리에서 테스트 스위트를 선택한다.<br/>
-**설정** 아이콘을 클릭하면 **Test Suite Operations**[^1] 와 **Test Case Operations** 메뉴가 나타난다.
+왼쪽 트리 영역에서 테스트 스위트를 선택한다.<br/>
+**설정** 아이콘을 클릭하면 **Test Suite Operations**[^2] 와 **Test Case Operations** 메뉴가 나타난다.
 
 ![]({{ site.url }}/_resource/testlink/testlink_no_test_case.png)
 
-**Test Case Operations** 메뉴의 **'+'** 아이콘을 선택하여 테스트 케이스를 작성한다.
+**Test Case Operations** 메뉴의 **+** 아이콘을 선택하여 테스트 케이스를 작성한다.
 
 ![]({{ site.url }}/_resource/testlink/create_testcase.png)
 
-작성된 테스트 케이스 화면은 다음과 같다.
+작성된 테스트 케이스 상세 화면은 다음과 같다.[^3]
 
 ![]({{ site.url }}/_resource/testlink/testcase_no_step.png)
 
 #### 단계별 테스트 추가
 
-**step** 을 추가하기 위해 **Create Step** 버튼을 클릭한다.
+테스트 케이스 상세 화면에서 테스트의 단계를 추가하는게 가능하다. **Create Step** 버튼을 클릭한다.
 
 단계별 테스트 액션과 테스트 결과를 입력 후 **Save & exit**  버튼을 클릭한다.
 - **저장** - 작성 중인 step 을 저장 후, 추가 step 을 작성한다.
@@ -72,8 +73,10 @@ Testlink 는 웹 기반의 테스트 관리 도구이다. 테스트 명세와 �
 
 ![]({{ site.url }}/_resource/testlink/create_step.png)
 
-단계별 테스트가 작성된 테스트 케이스는 다음과 같다.
+단계별 테스트가 작성된 테스트 케이스 상세 화면은 다음과 같다.
 
 ![]({{ site.url }}/_resource/testlink/confirm_testcase_created.png)
 
-[^1]: **Test Suite Operations** 메뉴의 **'+'** 아이콘을 클릭하면 선택된 테스트 스위트의 하위 테스트 스위트 생성이 가능하다.
+[^1]: 이 페이지는 **홈 > 테스트 프로젝트 관리** 메뉴 선택 시에 재진입 가능하다.
+[^2]: **Test Suite Operations** 메뉴의 **'+'** 아이콘을 클릭하면 선택된 테스트 스위트의 하위 테스트 스위트 생성이 가능하다.
+[^3]: 작성한 테스트 케이스는 재진입 시 트리 영역에 표시된다.
