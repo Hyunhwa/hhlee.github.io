@@ -107,14 +107,29 @@ root 권한 계정과 Testlink 에 접근할 DB 계정 정보를 입력 후, **P
 
 ![]({{ site.url }}/_resource/testlink/install_3_2_definition_of_db_access.png)
 
+다음과 같이 Testlink DB 가 생성되면 Testlink 설치가 완료된다. [^3]
+![]({{ site.url }}/_resource/testlink/install_4_1_create_db.png)
+
+Testlink 가 제공하는 메일 보내기 기능을 사용할 경우 추가 설정이 필요하다.
+
+testlink 폴더 내부에 **config.inc.php** 파일에서 [SMTP] 설정 정보를 가져와[^4] **custom_config.inc.php** 에 붙여넣고, 메일 정보를 입력한다.
+
+![]({{ site.url }}/_resource/testlink/install_4_2_create_db.png)
+
+`http://localhost/testlink` 에 다음과 같이 관리자 화면이 나타나면 설치완료!![^5]
+![]({{ site.url }}/_resource/testlink/testlink_intro.png)
+
 <br/> 
 ### 참고자료
 - [testlink_installation_manual.pdf]({{ site.url }}/_resource/testlink/testlink_installation_manual.pdf) [영문]
 - [Testlink.pdf](https://www.swbank.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000000005882&fileSn=0&AU=Y) [국문]
 - [MAC OS上安装testlink](http://bungylovemickey.thpiano.com/?p=92) [중문]
 
-[^1]: **It works!** 가 나타나지 않는 경우 터미널을 열어 Apache를 시작한다. ```sudo apachectl start```
+[^1]: **It works!** 가 나타나지 않는 경우 터미널을 열어 Apache를 시작한다. ```sudo apachectl start #apache 시작```
 [^2]: 페이지 에러가 발생된 경우 터미널에서 Apache를 재실행 한다.
+[^3]: DB 연결 실패 화면이 표시된 경우 Mysql 이 실행되어있는지 확인한다. ```sudo mysql.server start #mysql 시작 ```
+[^4]: **config.inc.php** 파일 내 **'[SMTP]'** 를 찾으면 구분선으로 구분된 영역을 찾을 수 있다. 
+[^5]: 첫 진입 시 계정 정보는 ```admin```, ```admin``` 이다. 
 
 [MySql]:https://www.mysql.com/downloads/
 [Testlink]:http://testlink.org/

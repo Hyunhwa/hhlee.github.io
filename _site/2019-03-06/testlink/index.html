@@ -189,6 +189,18 @@
 
 <p><img src="http://localhost:4000/_resource/testlink/install_3_2_definition_of_db_access.png" alt="" /></p>
 
+<p>다음과 같이 Testlink DB 가 생성되면 Testlink 설치가 완료된다. <sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>
+<img src="http://localhost:4000/_resource/testlink/install_4_1_create_db.png" alt="" /></p>
+
+<p>Testlink 가 제공하는 메일 보내기 기능을 사용할 경우 추가 설정이 필요하다.</p>
+
+<p>testlink 폴더 내부에 <strong>config.inc.php</strong> 파일에서 [SMTP] 설정 정보를 가져와<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> <strong>custom_config.inc.php</strong> 에 붙여넣고, 메일 정보를 입력한다.</p>
+
+<p><img src="http://localhost:4000/_resource/testlink/install_4_2_create_db.png" alt="" /></p>
+
+<p><code class="highlighter-rouge">http://localhost/testlink</code> 에 다음과 같이 관리자 화면이 나타나면 설치완료!!<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>
+<img src="http://localhost:4000/_resource/testlink/testlink_intro.png" alt="" /></p>
+
 <p><br /></p>
 <h3 id="참고자료">참고자료</h3>
 <ul>
@@ -200,10 +212,19 @@
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p><strong>It works!</strong> 가 나타나지 않는 경우 터미널을 열어 Apache를 시작한다. <code class="highlighter-rouge">sudo apachectl start</code> <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p><strong>It works!</strong> 가 나타나지 않는 경우 터미널을 열어 Apache를 시작한다. <code class="highlighter-rouge">sudo apachectl start #apache 시작</code> <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
       <p>페이지 에러가 발생된 경우 터미널에서 Apache를 재실행 한다. <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>DB 연결 실패 화면이 표시된 경우 Mysql 이 실행되어있는지 확인한다. <code class="highlighter-rouge">sudo mysql.server start #mysql 시작</code> <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p><strong>config.inc.php</strong> 파일 내 <strong>‘[SMTP]’</strong> 를 찾으면 구분선으로 구분된 영역을 찾을 수 있다. <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>첫 진입 시 계정 정보는 <code class="highlighter-rouge">admin</code>, <code class="highlighter-rouge">admin</code> 이다. <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>
