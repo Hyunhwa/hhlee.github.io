@@ -102,7 +102,7 @@
     </tr>
     <tr>
       <td><strong>PHP</strong></td>
-      <td>5.2 이상 (1.9 공식문서에는 6.0을 지원하지 않는다고 하였으나, 7.x 버전에서도 구동됨)</td>
+      <td>5.2 이상 (1.9.20 버전 기준 5.5 이상)</td>
     </tr>
   </tbody>
 </table>
@@ -149,11 +149,45 @@
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$tlCfg</span><span class="o">-&gt;</span><span class="na">log_path</span> <span class="o">=</span> <span class="s1">'/Users/{username}/Sites/testlink/logs'</span><span class="p">;</span>
 <span class="nv">$g_repositoryPath</span> <span class="o">=</span> <span class="s1">'/Users/{username}/Sites/testlink/upload_area'</span><span class="p">;</span>
 </code></pre></div></div>
-<p>터미널을 열어 <strong>testlink</strong> 내 모든 파일의 접근 권한을 변경한다.</p>
+<p>터미널을 열어 <strong>testlink</strong> 내 모든 파일의 접근 권한을 변경한다. (모든 권한 허용)</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>chmod 777 Sites/testlink/<span class="k">*</span>
 </code></pre></div></div>
-<p>브라우저에 <code class="highlighter-rouge">http://localhost/testlink/install</code> 입력하면 Testlink 설치를 위한 화면이 나타난다. <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>
+<p>이제 브라우저에 <code class="highlighter-rouge">http://localhost/testlink/install</code> 입력하면 Testlink 설치를 위한 화면이 나타난다. <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+
+<p><strong>New installation</strong> 선택
 <img src="http://localhost:4000/_resource/testlink/testlink_install_intro.png" alt="" /></p>
+
+<p>약관 동의 후 <strong>continue</strong> 선택 
+<img src="http://localhost:4000/_resource/testlink/install_1_acceptance_of_license.png" alt="" /></p>
+
+<p>web/php 설정을 확인한다. (Database 는 Mysql / MSSql 중 하나만 설치되어 있어도 된다.)
+<img src="http://localhost:4000/_resource/testlink/install_2_1_verification_of_system_and_configuration_requirements.png" alt="" /></p>
+
+<p>Testlink 내부 파일들의 접근 권한을 확인한다. (testlink 내 모든 파일 접근 권한이 허용되어있으면 OK)</p>
+<ul>
+  <li>gui/templates_c</li>
+  <li>logs</li>
+  <li>upload_area</li>
+</ul>
+
+<p><img src="http://localhost:4000/_resource/testlink/install_2_2_verification_of_system_and_configuration_requirements.png" alt="" /></p>
+
+<p>DB 설정을 위한 정보를 입력한다. (기본적으로 testlink 라는 테이블명으로 생성된다.)
+<img src="http://localhost:4000/_resource/testlink/install_3_1_definition_of_db_access.png" alt="" /></p>
+
+<p>root 권한 계정과 Testlink 에 접근할 DB 계정 정보를 입력 후, <strong>Process TestLink Setup!</strong> 을 선택</p>
+
+<p>설치시 다음 권한을 필요로 합니다.</p>
+<ul>
+  <li>INDEX, CREATE, DELETE, DROP</li>
+</ul>
+
+<p>운영 시 Testlink 에 접근할 계정은 다음 권한을 갖고 있어야 합니다.</p>
+<ul>
+  <li>ALTER, SELECT, INSERT, UPDATE</li>
+</ul>
+
+<p><img src="http://localhost:4000/_resource/testlink/install_3_2_definition_of_db_access.png" alt="" /></p>
 
 <p><br /></p>
 <h3 id="참고자료">참고자료</h3>
