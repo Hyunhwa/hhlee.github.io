@@ -34,7 +34,7 @@ remote_theme: aweekj/kiko-now
 
 # Disqus
 disqus:
-  id:               "hyunhwa_lee"
+  id:               "hhlees-blog"
 
 # URL
 url:                "https://hyunhwa.github.io/" # the base hostname & protocol for your site
@@ -57,6 +57,8 @@ kramdown:
 
 # Navigation
 nav:
+  - name:           "Tags"
+    url:            "/tags"
   - name:           "About"
     url:            "/about"
 
