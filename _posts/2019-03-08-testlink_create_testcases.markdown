@@ -13,7 +13,7 @@ Testlink 는 웹 기반의 테스트 관리 도구이다. 테스트 명세와 �
 
 1. 프로젝트 생성
 2. 테스트 스위트 생성
-3. 테스트 케이스 작성
+3. 테스트 케이스 생성
  - 단계별 테스트 추가
 
 
@@ -48,7 +48,7 @@ Testlink 는 웹 기반의 테스트 관리 도구이다. 테스트 명세와 �
 ![]({{ site.url }}/_resource/testlink/confirm_testsuite_created.png)
 
 
-### 3. 테스트 케이스 작성
+### 3. 테스트 케이스 생성
 
 왼쪽 트리 영역에서 테스트 스위트를 선택한다.<br/>
 **설정** 아이콘을 클릭하면 **Test Suite Operations**[^2] 와 **Test Case Operations** 메뉴가 나타난다.
