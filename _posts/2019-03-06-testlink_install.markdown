@@ -61,20 +61,26 @@ Apache 웹서버의 루트 디렉토리가 될 폴더를 생성한다. ( **/User
 [MySql] 공식 사이트에서 **MySQL Comunity Edition** 을 설치한다. (자세한 설명은 다음 기회에..)
 
 ### Testlink 설치
-[Github] 에서 Testlink 소스를 다운로드 받는다. <br/>
-(2019.03.06 기준 sourceforge 사이트에 접근이 되지 않음)
+[SourceForge] 나 [Github] 에서 Testlink 소스를 다운로드 받는다. <br/>
+(나는 Github 에서 1.19.20_dev 버전을 다운로드 받았다.)
 
 **/User/{username}/Sites** 에 압축을 푼 뒤, 생성된 폴더명을 **testlink**로 변경한다.
 ![]({{ site.url }}/_resource/testlink/change_name_testlink.png)
+
+**testlink** 내 **config_db.inc.php** 이름의 빈 파일을 생성한다.
+![]({{ site.url }}/_resource/testlink/config_db_inc_php_location.png)
 
 **testlink** 내 **custom_config.inc.php.example** 파일을 복사하여 **custom_config.inc.php** 생성 뒤 다음과 같이 내용을 작성한다. 
 ```php
 $tlCfg->log_path = '/Users/{username}/Sites/testlink/logs';
 $g_repositoryPath = '/Users/{username}/Sites/testlink/upload_area';
 ```
-터미널을 열어 **testlink** 내 모든 파일의 접근 권한을 변경한다. (모든 권한 허용)
+터미널을 열어 **testlink** 내 다음 파일의 접근 권한을 변경한다. (모든 권한 허용)
 ```bash
-sudo chmod 777 Sites/testlink/*
+sudo chmod 777 Sites/testlink/gui/templates_c
+sudo chmod 777 Sites/testlink/logs
+sudo chmod 777 Sites/testlink/upload_area
+sudo chmod 777 Sites/testlink/config_db.inc.php
 ```
 이제 브라우저에 `http://localhost/testlink/install` 입력하면 Testlink 설치를 위한 화면이 나타난다. [^2]
 
@@ -87,7 +93,7 @@ sudo chmod 777 Sites/testlink/*
 web/php 설정을 확인한다. (Database 는 Mysql / MSSql 중 하나만 설치되어 있으면 된다.)
 ![]({{ site.url }}/_resource/testlink/install_2_1_verification_of_system_and_configuration_requirements.png)
 
-Testlink 내부 파일들의 접근 권한을 확인한다. (testlink 내 모든 파일 접근 권한이 허용되어있으면 OK)
+Testlink 내부 파일들의 접근 권한을 확인한다.
 - gui/templates_c
 - logs
 - upload_area 
@@ -133,5 +139,6 @@ testlink 폴더 내부에 **config.inc.php** 파일에서 [SMTP] 설정 정보�
 
 [MySql]:https://www.mysql.com/downloads/
 [Testlink]:http://testlink.org/
-[Github]:https://github.com/TestLinkOpenSourceTRMS/testlink-code/tree/testlink_1_9/
+[SourceForge]:https://sourceforge.net/projects/testlink/
+[Github]:https://github.com/TestLinkOpenSourceTRMS/testlink-code
 [Installer]:https://bitnami.com/stack/testlink/installer
