@@ -16,13 +16,13 @@ Testlink 는 다음과 같이 기본적으로 6가지 역할을 가지고 있으
 
 ### 1. 게스트 (Guest) 
 
-테스트 케이스와 프로젝트 매트릭스(보고서)를 열람할 권한을 갖는다.
+테스트 사례, 보고서 및 메트릭을 볼 수 있는 권한만 갖는다.
 
 ![]({{ site.url }}/_resource/testlink/home_guest.png)
 
 ### 2. 테스트 실행자 (Tester)
 
-게스트의 권한을 포함하여 그들에게 할당된 테스트만 실행할 수 있는 권한을 갖는다.
+할당된 테스트를 보고 실행할 수 있는 권한을 갖는다.
 
 ![]({{ site.url }}/_resource/testlink/home_tester.png)
 
@@ -54,3 +54,7 @@ Testlink 는 다음과 같이 기본적으로 6가지 역할을 가지고 있으
 시스템에 사용자를 추가하고 플러그인이나 각종 트래킹 시스템의 연동을 설정하는 권한을 유일하게 갖는다.
 
 ![]({{ site.url }}/_resource/testlink/home_admin.png)
+
+<br/> 
+### 참고자료
+- [testlink_installation_manual.pdf]({{ site.url }}/_resource/testlink/testlink_user_manual.pdf) [영문]
